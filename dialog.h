@@ -30,15 +30,23 @@ private slots:
     void progerBarTimeOut();
     void myComplete(QString result);
 
+    void on_lineEdit_time_start_editingFinished();
+
+    void on_lineEdit_time_end_editingFinished();
+
 private:
     void            initUI();
     void            canbtnUse(bool use);
+    QString         parseTime(QString timeStr, double& seconds);
 
 
 private:
     Ui::Dialog *ui;
     QString     m_fileIn;
     QString     m_fileOut;
+
+    double      m_startTime;
+    double      m_endTime;
 
     int         m_progress = 0;
     QTimer      m_progressTime;
